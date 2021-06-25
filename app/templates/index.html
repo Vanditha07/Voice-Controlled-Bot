@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Speech Recognition{% endblock %}</title>
+  </head>
+
+  <body>
+    <section>
+      <h1>Speech Recognition</h1>
+      <div class="container">
+       <div class="button">
+         <form action="#" method='POST'>
+           <input type="image" src="https://cdn.pixabay.com/photo/2018/05/15/20/47/microphone-3404243_960_720.png" alt="Press to talk" width="150" height="150">
+         </form>
+       </div>
+       {% block content %}
+       <div class="texts" hidden>
+         <p> Your command goes here!</p>
+       </div>
+       {% endblock %}
+     </div>
+    </section>
+  </body>
+</html>

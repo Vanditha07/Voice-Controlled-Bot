@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Speech Recognition{% endblock %}</title>
+  </head>
+
+  <body>
+    <section>
+      <h2 class="login">LOGIN </h2>
+      <br />
+      <br />
+      <form method="POST" actions="" class='form-control'>
+        {{ form.hidden_tag() }}
+        <div class="input-field">
+          {{ form.username }}
+        </div>
+        <br />
+        <br />
+        <div class="input-field">
+          {{ form.password }}
+        </div>
+        <br />
+        <br />
+        <small class="flashed-messages">
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                <p>{{ message }}</p>      
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </small>
+        <span class="submit">{{ form.submit }}</span>
+      </form>
+    </section>
+  </body>
+</html>
